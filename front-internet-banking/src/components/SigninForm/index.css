@@ -1,12 +1,12 @@
 
-.signin-button {
+.login-button {
     font-family: Arial, sans-serif;
     text-align: center;
     color: #333;
     margin-bottom: 25px;
 }
 
-.login-container {
+.signin-container {
     font-family: Arial, sans-serif;
     max-width: 400px;
     margin: 50px auto;
@@ -17,13 +17,13 @@
     background-color: #fff;
 }
 
-.login-container h2 {
+.signin-container h2 {
     text-align: center;
     color: #333;
     margin-bottom: 25px;
 }
 
-.login-form {
+.signin-form {
     display: flex;
     flex-direction: column;
 }
@@ -53,7 +53,7 @@
     box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
 }
 
-.login-button {
+.signin-button {
     padding: 12px 20px;
     background-color: #007bff;
     color: white;
@@ -65,10 +65,10 @@
     transition: background-color 0.3s ease;
 }
 
-.login-button:hover {
+.signin-button:hover {
     background-color: #0056b3;
 }
 
-.login-button:active {
+.signin-button:active {
     background-color: #004085;
 }

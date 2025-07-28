@@ -3,48 +3,67 @@ import React, { useState } from 'react';
 import './index.css'; // Importa o arquivo CSS
 
 function LoginForm() {
-    const [username, setUsername] = useState('');
+    const [cpf, setCpf] = useState('');
     const [password, setPassword] = useState('');
+
+    const formatCpf = (value) => {
+        // Remove tudo que não for dígito
+        value = value.replace(/\D/g, '');
+
+        // Aplica a máscara
+        if (value.length > 0) {
+            value = value.replace(/^(\d{3})(\d)/, '$1.$2');
+            value = value.replace(/^(\d{3})\.(\d{3})(\d)/, '$1.$2.$3');
+            value = value.replace(/\.(\d{3})(\d)/, '.$1-$2');
+        }
+
+        // Limita o tamanho máximo do CPF
+        if (value.length > 14) {
+            value = value.substring(0, 14);
+        }
+
+        return value;
+    };
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
-        if (name === 'username') {
-            setUsername(value);
-        } else if (name === 'password') {
+        if (name === "cpf") {
+            setCpf(formatCpf(value));
+        } else if (name === "password") {
             setPassword(value);
         }
     };
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log('Dados de Login:', { username, password });
-        alert(`Tentando logar com Usuário: ${username} e Senha: ${password}`);
+        console.log('Dados de Login:', { cpf, password });
+        alert(`Tentando logar com Usuário: ${cpf} e Senha: ${password}`);
         // Opcional: Limpar os campos após o envio
         // setUsername('');
         // setPassword('');
     };
 
     return (
-        <div className="login-container"> {/* Aplica a classe CSS */}
+        <div className="login-container">
             <h2>Login</h2>
-            <form onSubmit={handleSubmit} className="login-form"> {/* Aplica a classe CSS */}
-            <div className="form-group"> {/* Aplica a classe CSS */}
-                <label htmlFor="username">Usuário:</label>
+            <form onSubmit={handleSubmit} className="login-form">
+            <div className="form-group">
+                <label htmlFor="CPF">CPF:</label>
                 <input
                     type="text"
-                    id="username"
-                    name="username"
-                    placeholder="Nome de Usuario"
-                    value={username}
+                    id="cpfInput"
+                    name="cpf"
+                    placeholder="___.___.___-__"
+                    value={cpf}
                     onChange={handleInputChange}
                     required
                 />
             </div>
-            <div className="form-group"> {/* Aplica a classe CSS */}
-                <label htmlFor="password">Senha:</label>
+            <div className="form-group">
+                <label htmlFor="password">Password:</label>
                 <input
                     type="password"
-                    id="password"
+                    id="passwordInput"
                     name="password"
                     placeholder="*******"
                     value={password}
@@ -52,12 +71,12 @@ function LoginForm() {
                     required
                 />
             </div>
-            <button type="submit" className="login-button"> {/* Aplica a classe CSS */}
-                Entrar
+            <button type="submit" className="login-button">
+                Login
             </button>
             </form>
+
         </div>
     );
-}
 
-export default LoginForm;
+} export default LoginForm;
