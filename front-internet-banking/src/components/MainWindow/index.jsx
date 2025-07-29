@@ -12,6 +12,7 @@ function MainWindow() {
     return (
         <div className="login-container">
         <h2>MainWindow<br/><br/></h2>
+
         <form onSubmit={handleLogout} className="login-form">
         <button type="submit" className="login-button">
             LogOut
