@@ -8,11 +8,11 @@ import MainWindow from './components/MainWindow';
 function NavigationMenu() {
     return (
         <nav>
-        <ul>
-        <li><Link to="/login">Login</Link></li>
-        <li><Link to="/signin">Cadastro</Link></li>
-        <li><Link to="/main">Principal</Link></li>
-        </ul>
+            <ul>
+                <li><Link to="/login">Login</Link></li>
+                <li><Link to="/signin">Cadastro</Link></li>
+                <li><Link to="/main">Principal</Link></li>
+            </ul>
         </nav>
     );
 }
@@ -20,17 +20,17 @@ function NavigationMenu() {
 function App() {
     return (
         <Router>
-        <div className="App">
-        <Routes>
-        {/* Rota padrão: redireciona para /login */}
-        <Route path="/" element={<LoginRedirect />} />
-        <Route path="/login" element={<LoginForm />} />
-        <Route path="/signin" element={<SignInForm />} />
-        <Route path="/main" element={<MainWindow />} />
-        {/* TO-DO adicionar uma rota para 404 Not Found */}
-        {/* <Route path="*" element={<h2>404 - Página Não Encontrada</h2>} /> */}
-        </Routes>
-        </div>
+            <div className="App">
+            <Routes>
+                {/* Rota padrão: redireciona para /login */}
+                <Route path="/" element={<LoginRedirect />} />
+                <Route path="/login" element={<LoginForm />} />
+                <Route path="/signin" element={<SignInForm />} />
+                <Route path="/main" element={<MainWindow />} />
+                {/* TO-DO adicionar uma rota para 404 Not Found */}
+                {/* <Route path="*" element={<h2>404 - Página Não Encontrada</h2>} /> */}
+            </Routes>
+            </div>
         </Router>
     );
 }
@@ -39,7 +39,7 @@ function App() {
 function LoginRedirect() {
     const navigate = useNavigate();
     React.useEffect(() => {
-        navigate('/login');
+        navigate('/main');
     }, [navigate]);
     return null;
 }

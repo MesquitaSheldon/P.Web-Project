@@ -1,24 +1,22 @@
-// src/components/MainWindow/index.jsx
+// src/components/MainWindow
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import Sidebar from '../Sidebar';
+import './index.css'; // Estilos globais se necessário
 
 function MainWindow() {
-    const navigate = useNavigate(); // Hook para navegação programática
 
-    const handleLogout = (event) => {
-        navigate('/login');
-    };
+    return(
+        <div className='mainwindow'>
 
-    return (
-        <div className="login-container">
-        <h2>MainWindow<br/><br/></h2>
+            <Sidebar/>
 
-        <form onSubmit={handleLogout} className="login-form">
-        <button type="submit" className="login-button">
-            LogOut
-        </button>
-        </form>
+            <div className="main-content shifted">
+                <h1>Conteúdo Principal</h1>
+                <p>Este é o conteúdo principal da sua aplicação.</p>
+                <p>A sidebar pode ser controlada por um estado.</p>
+            </div>
         </div>
     );
+}
 
-} export default MainWindow;
+export default MainWindow;

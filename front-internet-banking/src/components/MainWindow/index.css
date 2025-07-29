@@ -1,0 +1,8 @@
+.main-content {
+    transition: margin-left 0.5s;
+    padding: 16px;
+}
+
+.main-content.shifted {
+    margin-left: 250px; /* Desloca o conteúdo principal para a direita */
+}

@@ -53,7 +53,7 @@ function SigninForm(){
             <h2>Signin</h2>
             <form onSubmit={handleSubmit} className="signin-form">
                 <div className="form-group">
-                    <label htmlFor="Name">Name:</label>
+                    <label htmlForm="Name">Name:</label>
                     <input
                     type="text"
                     id="nameInput"
@@ -65,7 +65,7 @@ function SigninForm(){
                     />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="CPF">CPF:</label>
+                    <label htmlForm="CPF">CPF:</label>
                     <input
                     type="text"
                     id="cpfInput"
@@ -77,7 +77,7 @@ function SigninForm(){
                     />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="email">Email:</label>
+                    <label htmlForm="email">Email:</label>
                     <input
                     type="email"
                     id="emailInput"
@@ -89,7 +89,7 @@ function SigninForm(){
                     />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="password">Password:</label>
+                    <label htmlForm="password">Password:</label>
                     <input
                     type="password"
                     id="passwordInput"
