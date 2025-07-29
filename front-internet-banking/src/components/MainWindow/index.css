@@ -1,6 +1,6 @@
 .main-content {
     transition: margin-left 0.5s;
-    padding: 16px;
+    padding-left: 35%;
 }
 
 .main-content.shifted {

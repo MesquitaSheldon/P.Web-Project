@@ -1,5 +1,5 @@
 // src/components/LoginForm/index.jsx
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import './index.css'; // Importa o arquivo CSS
 
@@ -40,6 +40,13 @@ function LoginForm() {
         event.preventDefault();
         console.log('Dados de Login:', { cpf, password });
         alert(`Tentando logar com Usuário: ${cpf} e Senha: ${password}`);
+        //salvar os dados cpf e senha no sessionStorage e LocalStorage
+        if(cpf==='863.171.915-30')
+            sessionStorage.setItem('userName', 'Sheldon');
+        else
+            sessionStorage.setItem('userName', '');
+            sessionStorage.setItem('userCpf', cpf);
+        sessionStorage.setItem('userPassword', password);
         setCpf('');
         setPassword('');
         navigate('/main');

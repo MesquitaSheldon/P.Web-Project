@@ -1,5 +1,5 @@
 // src/components/MainWindow
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Sidebar from '../Sidebar';
 import './index.css'; // Estilos globais se necessário
 

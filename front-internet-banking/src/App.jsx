@@ -39,7 +39,7 @@ function App() {
 function LoginRedirect() {
     const navigate = useNavigate();
     React.useEffect(() => {
-        navigate('/main');
+        navigate('/login');
     }, [navigate]);
     return null;
 }

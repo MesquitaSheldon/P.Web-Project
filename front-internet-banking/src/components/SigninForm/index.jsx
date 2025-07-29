@@ -1,6 +1,6 @@
 // src/components/SigninForm/index.jsx
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import './index.css';
 
 function SigninForm(){
@@ -32,7 +32,7 @@ function SigninForm(){
     };
 
     const handleSubmit = (event) => {
-        navigate('/mainWindow');
+        navigate('/login');
     }
 
     const handleInputChange = (event) => {
@@ -103,6 +103,7 @@ function SigninForm(){
                 <button type="submit" className="signin-button">
                     Signin
                 </button>
+                 <div className="signin-footer">Já tem uma conta? <Link to="/login">Clique aqui</Link> </div>
             </form>
         </div>
     );
