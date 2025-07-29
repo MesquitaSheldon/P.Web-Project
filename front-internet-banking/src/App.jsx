@@ -21,14 +21,13 @@ function App() {
     return (
         <Router>
         <div className="App">
-        <NavigationMenu /> {/* Opcional: para navegar entre as telas */}
         <Routes>
         {/* Rota padrão: redireciona para /login */}
         <Route path="/" element={<LoginRedirect />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/signin" element={<SignInForm />} />
         <Route path="/main" element={<MainWindow />} />
-        {/* Você pode adicionar uma rota para 404 Not Found */}
+        {/* TO-DO adicionar uma rota para 404 Not Found */}
         {/* <Route path="*" element={<h2>404 - Página Não Encontrada</h2>} /> */}
         </Routes>
         </div>

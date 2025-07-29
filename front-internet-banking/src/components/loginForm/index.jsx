@@ -1,6 +1,6 @@
 // src/components/LoginForm/index.jsx
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import './index.css'; // Importa o arquivo CSS
 
 function LoginForm() {
@@ -76,8 +76,8 @@ function LoginForm() {
             <button type="submit" className="login-button">
                 Login
             </button>
+            <div className="login-footer">Ainda não tem conta? <Link to="/signin">Clique aqui</Link> </div>
             </form>
-
         </div>
     );
 
