@@ -1,8 +1,10 @@
 // src/components/LoginForm/index.jsx
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './index.css'; // Importa o arquivo CSS
 
 function LoginForm() {
+    const navigate = useNavigate(); // Hook para navegação programática
     const [cpf, setCpf] = useState('');
     const [password, setPassword] = useState('');
 
@@ -38,9 +40,9 @@ function LoginForm() {
         event.preventDefault();
         console.log('Dados de Login:', { cpf, password });
         alert(`Tentando logar com Usuário: ${cpf} e Senha: ${password}`);
-        // Opcional: Limpar os campos após o envio
-        // setUsername('');
-        // setPassword('');
+        setCpf('');
+        setPassword('');
+        navigate('/main');
     };
 
     return (

@@ -1,7 +1,10 @@
+// src/components/SigninForm/index.jsx
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './index.css';
 
 function SigninForm(){
+    const navigate = useNavigate(); // Hook para navegação programática
     const [name, setName] = useState('');
     const [cpf, setCpf] = useState('');
     const [email, setEmail] = useState('');
@@ -29,7 +32,7 @@ function SigninForm(){
     };
 
     const handleSubmit = (event) => {
-
+        navigate('/main');
     }
 
     const handleInputChange = (event) => {
