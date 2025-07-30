@@ -4,20 +4,26 @@ import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react
 import './index.css'; // Importe seu arquivo CSS para estilização
 
 function Sidebar() {
-    const [userName, setUsername] = useState(sessionStorage.getItem('userName'));
-    const [userCpf, setUserCpf] = useState(sessionStorage.getItem('userCpf'));
+    const [name, setUsername] = useState(sessionStorage.getItem('userName'));
+    const [cpf, setUserCpf] = useState(sessionStorage.getItem('userCpf'));
+
+    const LogOutExecution = () => {
+        return(
+            alert(`Deslogando com user: ${name} , cpf: ${cpf}`),
+            sessionStorage.clear()
+        )
+    }
 
     return (
         <div className="sidebar">
             <h1>
-                Olá {userName},<br/>seja bem-vido(a)!
+                Olá {name},<br/>seja bem-vido(a)!
             </h1>
             <nav className="navegation">
-                <ul>
-                    <li><Link to="/login">Login</Link></li>
-                    <li><Link to="/signin">Cadastro</Link></li>
-                    <li><Link to="/main">Principal</Link></li>
-                </ul>
+                    <div> opcao 1 </div>
+                    <div> opcao 2 </div>
+                    <div> opcao 3 </div>
+                    <div><button onClick={LogOutExecution}><Link to="/login">Logout</Link></button></div>
             </nav>
         </div>
     );

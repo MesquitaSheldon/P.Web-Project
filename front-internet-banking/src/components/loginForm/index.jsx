@@ -1,12 +1,17 @@
 // src/components/LoginForm/index.jsx
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import { toast } from 'react-toastify'; // Importe o toast
 import './index.css'; // Importa o arquivo CSS
 
 function LoginForm() {
     const navigate = useNavigate(); // Hook para navegação programática
     const [cpf, setCpf] = useState('');
     const [password, setPassword] = useState('');
+    const [users, setUsers] = useState([
+        { name: 'Sheldon', cpf: '123.123.123-12', password:'123' },
+        { name: 'Teste', cpf: '123.123.123-11', password:'1234' }
+    ]);
 
     const formatCpf = (value) => {
         // Remove tudo que não for dígito
@@ -38,18 +43,50 @@ function LoginForm() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log('Dados de Login:', { cpf, password });
-        alert(`Tentando logar com Usuário: ${cpf} e Senha: ${password}`);
-        //salvar os dados cpf e senha no sessionStorage e LocalStorage
-        if(cpf==='863.171.915-30')
-            sessionStorage.setItem('userName', 'Sheldon');
-        else
-            sessionStorage.setItem('userName', '');
+        const foundUser = users.find(user => user.cpf === cpf);
+
+        if(!foundUser){
+            toast.error(`Login e senha não encontrados. Login: ${cpf} e Senha: ${password}`, {
+                position: "top-center",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+            setPassword('');
+            setCpf('');
+            navigate('/login');
+        }
+
+        if(foundUser.password === password){
+            sessionStorage.setItem('userName', foundUser.name);
             sessionStorage.setItem('userCpf', cpf);
-        sessionStorage.setItem('userPassword', password);
-        setCpf('');
-        setPassword('');
-        navigate('/main');
+            toast.success(`Bem-vindo(a), ${foundUser.name}!`, {
+                position: "top-center",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+            navigate('/main');
+        }
+
+        if(foundUser.password !== password){
+            toast.error(`Senha incorreta: ${password}`, {
+                position: "top-center",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+            setPassword('');
+        }
     };
 
     return (
