@@ -1,17 +1,26 @@
 // src/components/Sidebar.js
 import { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify'; // Importe o toast
+import { Link, useNavigate } from 'react-router-dom';
 import './index.css'; // Importe seu arquivo CSS para estilização
 
 function Sidebar() {
+    const navigate = useNavigate();
     const [name, setUsername] = useState(sessionStorage.getItem('userName'));
     const [cpf, setUserCpf] = useState(sessionStorage.getItem('userCpf'));
 
     const LogOutExecution = () => {
-        return(
-            alert(`Deslogando com user: ${name} , cpf: ${cpf}`),
-            sessionStorage.clear()
-        )
+        toast.success(`Deslogando com user: ${name}, cpf: ${cpf}`, {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+        sessionStorage.clear()
+        navigate('/login');
     }
 
     return (
@@ -20,10 +29,11 @@ function Sidebar() {
                 Olá {name},<br/>seja bem-vido(a)!
             </h1>
             <nav className="navegation">
-                    <div> opcao 1 </div>
-                    <div> opcao 2 </div>
-                    <div> opcao 3 </div>
-                    <div><button onClick={LogOutExecution}><Link to="/login">Logout</Link></button></div>
+                    <div><Link to="/Deposito" className="sidebar-link">Deposito</Link></div>
+                    <div><Link to="/Saque" className="sidebar-link">Saque</Link></div>
+                    <div><Link to="/Pagamento" className="sidebar-link">Pagamento</Link></div>
+                    <div><Link to="/Extrato" className="sidebar-link">Extrato</Link></div>
+                    <div><button onClick={LogOutExecution}>Logout</button></div>
             </nav>
         </div>
     );

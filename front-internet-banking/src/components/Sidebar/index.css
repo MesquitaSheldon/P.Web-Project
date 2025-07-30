@@ -13,6 +13,12 @@
     z-index: 1000; /* Garante que a sidebar fique acima de outros elementos */
 }
 
+.sidebar-link {
+    text-decoration: none; /* Remove o sublinhado */
+    color: inherit;        /* Herda a cor do elemento pai (div ou outro) */
+    /* Ou defina uma cor específica, por exemplo: color: black; */
+}
+
 .sidebar.h1 {
     text-align: center;
     padding-left: 2000px;
