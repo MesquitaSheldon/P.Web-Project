@@ -25,6 +25,11 @@ function Sidebar() {
 
     return (
         <div className="sidebar">
+            <div className="Fofis-Bank-logo-container">
+                <img src="/src/assets/images/Fofis-Bank.png"
+                    alt="Fofis Bank Logo"
+                    className="Fofis-Bank-logo-image" />
+            </div>
             <h1>
                 Olá {name},<br/>seja bem-vido(a)!
             </h1>

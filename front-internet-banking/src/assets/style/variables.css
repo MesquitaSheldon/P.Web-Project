@@ -1,0 +1,28 @@
+:root {
+    /* Cores Primárias */
+    --brown-color: #F2AA80; /* Verde Fofis Bank */
+    --dark-brown-color: #733A26;
+    --red-color: #F28177;
+    --red-dark-color: #F25749;
+    --red-dark-plus-color: #591D0F;
+    --white-color: #F2F2F2;
+
+    /* Cores Neutras / Tons de Cinza */
+    --text-color-dark: #212121;
+    --text-color-light: #757575;
+    --background-light: #F5F5F5;
+    --white-color: #FFFFFF;
+    --black-color: #000000;
+
+    /* Cores de Feedback (sucesso, erro, aviso) */
+    --success-color: #4CAF50; /* Já usado como primary, mas pode ser específico */
+    --error-color: #D32F2F; /* Vermelho */
+    --warning-color: #FFEB3B; /* Amarelo claro */
+    --info-color: #2196F3; /* Azul */
+
+    /* Outras variáveis (opcional, mas bom para consistência) */
+    --border-radius-small: 4px;
+    --border-radius-medium: 8px;
+    --box-shadow-light: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    --box-shadow-medium: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}

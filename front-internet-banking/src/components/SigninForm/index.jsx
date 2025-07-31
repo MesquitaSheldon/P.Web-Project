@@ -103,7 +103,7 @@ function SigninForm(){
                 <button type="submit" className="signin-button">
                     Signin
                 </button>
-                 <div className="signin-footer">Já tem uma conta? <Link to="/login">Clique aqui</Link> </div>
+                 <div className="signin-footer">Já tem uma conta? <Link to="/login" className="login-Link">Clique aqui</Link> </div>
             </form>
         </div>
     );

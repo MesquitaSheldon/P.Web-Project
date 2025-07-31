@@ -1,8 +1,10 @@
+/* src/components/SigninForm/index.css */
+@import '/src/assets/style/variables.css';
 
 .login-button {
     font-family: Arial, sans-serif;
     text-align: center;
-    color: #333;
+    color: var(--white-color);
     margin-bottom: 25px;
 }
 
@@ -11,21 +13,39 @@
     max-width: 400px;
     margin: 50px auto;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 3px solid var(--dark-browb-color);
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    background-color: #fff;
+    background-color: #ecac7c;
+    box-shadow:
+        0px 8px 14px rgba(0, 0, 0, 1.6), /* Sombra padrão mais suave */
+        0px 12px 40px rgba(0, 0, 0, 1); /* Opcional: uma segunda sombra para profundidade */
 }
 
 .signin-container h2 {
     text-align: center;
-    color: #333;
+    color: black;
     margin-bottom: 25px;
+    background-color: rgba(138, 82, 55, 0.3);
+    width: 35%; /* Define que o h2 ocupe 60% da largura da div pai */
+    margin-left: auto; /* Centraliza o h2 horizontalmente */
+    margin-right: auto; /* Centraliza o h2 horizontalmente */
+    border-radius: 10px;
 }
 
 .signin-form {
     display: flex;
     flex-direction: column;
+}
+
+.login-Link {
+    text-decoration: none;
+    color: var(--red-dark-plus-color);
+}
+
+.login-Link:hover {
+    color: var(--white-color); /* Uma versão mais escura da cor ao passar o mouse */
+    text-decoration: underline; /* Adiciona sublinhado no hover para indicar que é clicável */
 }
 
 .form-group {
@@ -36,27 +56,27 @@
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
-    color: #555;
+    color: black;
 }
 
 .form-group input {
     width: calc(100% - 20px); /* Largura total menos o padding */
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid white;
     border-radius: 4px;
     font-size: 16px;
 }
 
 .form-group input:focus {
     outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    border-color: var(--dark-brown-color);
+    box-shadow: 0 0 0 3px rgba(113, 60, 34, 0.45);
 }
 
 .signin-button {
     padding: 12px 20px;
-    background-color: #007bff;
-    color: white;
+    background-color: var(--red-color);
+    color: black;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -66,9 +86,9 @@
 }
 
 .signin-button:hover {
-    background-color: #0056b3;
+    background-color: var(--red-dark-plus-color);
 }
 
 .signin-button:active {
-    background-color: #004085;
+    background-color: var(--white-color);
 }

@@ -102,8 +102,7 @@ function LoginForm() {
                     placeholder="___.___.___-__"
                     value={cpf}
                     onChange={handleInputChange}
-                    required
-                />
+                    required  />
             </div>
             <div className="form-group">
                 <label htmlFor="password">Password:</label>
@@ -114,13 +113,10 @@ function LoginForm() {
                     placeholder="*******"
                     value={password}
                     onChange={handleInputChange}
-                    required
-                />
+                    required />
             </div>
-            <button type="submit" className="login-button">
-                Login
-            </button>
-            <div className="login-footer">Ainda não tem conta? <Link to="/signin">Clique aqui</Link> </div>
+            <button type="submit" className="login-button"> Login </button>
+            <div className="login-footer">Ainda não tem conta? <Link to="/signin" className="signin-Link"> Clique aqui </Link> </div>
             </form>
         </div>
     );
