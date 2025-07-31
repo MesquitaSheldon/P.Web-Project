@@ -61,6 +61,7 @@
 }
 
 .navigation {
+    flex-grow: 1;
     padding-left: 300px;
     color: black;
 }
@@ -93,4 +94,31 @@
     padding: 10px 15px;
     cursor: pointer;
     border-radius: 5px;
+}
+
+.logout-div{
+    bottom: 100%;
+}
+
+.logout-button {
+    position: absolute; /* Posiciona o elemento em relação ao seu pai (sidebar) */
+    bottom: 20px;      /* Colado a 20px da parte inferior */
+    left: 20px;       /* Colado a 20px da parte direita */
+
+    /* Z-index pode ser útil se tiver outros elementos flutuantes */
+    z-index: 10;
+
+    padding: 9px 15px;
+    background-color: var(--red-dark-color);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: var(--red-dark-plus-color);
 }

@@ -38,7 +38,7 @@ function Sidebar() {
                     <div><Link to="/Saque" className="sidebar-link">Saque</Link></div>
                     <div><Link to="/Pagamento" className="sidebar-link">Pagamento</Link></div>
                     <div><Link to="/Extrato" className="sidebar-link">Extrato</Link></div>
-                    <div><button onClick={LogOutExecution}>Logout</button></div>
+                    <div className="logout-div"><button onClick={LogOutExecution} className="logout-button">Logout</button></div>
             </nav>
         </div>
     );
