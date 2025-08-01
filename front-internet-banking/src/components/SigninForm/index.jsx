@@ -55,50 +55,46 @@ function SigninForm(){
                 <div className="form-group">
                     <label htmlForm="Name">Name:</label>
                     <input
-                    type="text"
-                    id="nameInput"
-                    name="name"
-                    placeholder="Enter your name here"
-                    value={name}
-                    onChange={handleInputChange}
-                    required
-                    />
+                        type="text"
+                        id="nameInput"
+                        name="name"
+                        placeholder="Enter your name here"
+                        value={name}
+                        onChange={handleInputChange}
+                        required />
                 </div>
                 <div className="form-group">
                     <label htmlForm="CPF">CPF:</label>
                     <input
-                    type="text"
-                    id="cpfInput"
-                    name="cpf"
-                    placeholder="___.___.___-__"
-                    value={cpf}
-                    onChange={handleInputChange}
-                    required
-                    />
+                        type="text"
+                        id="cpfInput"
+                        name="cpf"
+                        placeholder="___.___.___-__"
+                        value={cpf}
+                        onChange={handleInputChange}
+                        required />
                 </div>
                 <div className="form-group">
                     <label htmlForm="email">Email:</label>
                     <input
-                    type="email"
-                    id="emailInput"
-                    name="email"
-                    placeholder="your.email@example.com"
-                    value={email}
-                    onChange={handleInputChange}
-                    required
-                    />
+                        type="email"
+                        id="emailInput"
+                        name="email"
+                        placeholder="your.email@example.com"
+                        value={email}
+                        onChange={handleInputChange}
+                        required />
                 </div>
                 <div className="form-group">
                     <label htmlForm="password">Password:</label>
                     <input
-                    type="password"
-                    id="passwordInput"
-                    name="password"
-                    placeholder="*******"
-                    value={password}
-                    onChange={handleInputChange}
-                    required
-                    />
+                        type="password"
+                        id="passwordInput"
+                        name="password"
+                        placeholder="*******"
+                        value={password}
+                        onChange={handleInputChange}
+                        required />
                 </div>
                 <button type="submit" className="signin-button">
                     Signin
