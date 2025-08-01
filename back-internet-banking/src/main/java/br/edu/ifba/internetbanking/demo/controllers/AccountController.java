@@ -18,8 +18,9 @@ import br.edu.ifba.internetbanking.demo.services.AccountServices;
 import br.edu.ifba.internetbanking.demo.services.BankTransactionService;
 import br.edu.ifba.internetbanking.demo.services.TicketServices;
 import jakarta.transaction.Transactional;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 @RequestMapping("/api/account")
 public class AccountController {
 
